@@ -14,6 +14,5 @@ public class SystemChecking {
         Linux linux = new Linux(1970);
         linux.turnOff();
         linux.turnOn();
-        linux.displayAgeOfPublishment();
     }
 }

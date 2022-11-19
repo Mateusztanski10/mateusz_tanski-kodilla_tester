@@ -16,7 +16,7 @@ public class OperatingSystem {
         System.out.println("This system is turned off");
     }
 
-    public void displayAgeOfPublishment() {
-        System.out.println("Age of publishment: " + ageOfPublishment);
+    public int getAgeOfPublishment() {
+        return ageOfPublishment;
     }
 }
