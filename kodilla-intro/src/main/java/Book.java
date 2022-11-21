@@ -1,7 +1,15 @@
 public class Book {
     private String author;
     private String title;
-    static String of (String author, String title) {
-        return author + title;
+
+    public Book (String author, String title) {
+        this.author = author;
+        this.title = title;
+    }
+
+    static Book of (String author, String title) {
+        Book book = new Book(author, title);
+        return book;
     }
 }
+
