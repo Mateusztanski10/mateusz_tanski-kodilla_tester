@@ -1,12 +1,15 @@
 public class UserCreator {
+
     private String name;
     private double age;
     private double height;
+
     public UserCreator(String name, double age, double height) {
         this.name = name;
         this.age = age;
         this.height = height;
     }
+
     public void checkAge() {
         if (name != null) {
             if (age > 30 && height > 160) {
