@@ -6,6 +6,10 @@ public class Seat implements Car {
     private static int decreaseValue = 10;
     private static int increaseValue = 35;
 
+    public Seat(int speed) {
+        this.speed = speed;
+    }
+
     @Override
     public int getSpeed() {
         return speed;

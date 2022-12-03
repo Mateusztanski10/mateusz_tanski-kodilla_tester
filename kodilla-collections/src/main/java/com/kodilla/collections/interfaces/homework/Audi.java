@@ -6,6 +6,10 @@ public class Audi implements Car {
     private static int decreaseValue = 30;
     private static int increaseValue = 55;
 
+    public Audi(int speed) {
+        this.speed = speed;
+    }
+
     @Override
     public int getSpeed() {
         return speed;

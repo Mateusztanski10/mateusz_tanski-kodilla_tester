@@ -3,13 +3,13 @@ package com.kodilla.collections.interfaces.homework;
 public class CarRace {
     public static void main(String[] args) {
 
-        Audi audi = new Audi();
+        Audi audi = new Audi(10);
         doRace(audi);
 
-        Mercedes mercedes = new Mercedes();
+        Mercedes mercedes = new Mercedes(20);
         doRace(mercedes);
 
-        Seat seat = new Seat();
+        Seat seat = new Seat(30);
         doRace(seat);
     }
 
