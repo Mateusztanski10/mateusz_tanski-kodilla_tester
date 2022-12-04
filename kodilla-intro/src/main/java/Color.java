@@ -2,7 +2,8 @@ import java.util.Scanner;
 
 public class Color {
     public static void main(String[] args) {
-        Color.getUserSelection();
+        String color = Color.getUserSelection();
+        System.out.println("Your color is: " + color);
     }
 
     public static String getUserSelection() {
@@ -15,6 +16,8 @@ public class Color {
                 case "B": return "BLACK";
                 case "G": return "GREY";
                 case "W": return "WHITE";
+                default:
+                    System.out.println("Wrong color, try again !");
             }
         }
     }
