@@ -23,14 +23,14 @@ public class CarsApplication {
 
         Random random = new Random();
         int printCarName = random.nextInt(3);
-        int a = getRandomSpeed(random);
+        int randomCar = getRandomSpeed(random);
 
         if(printCarName == 0)
-            return new Audi(a);
+            return new Audi(randomCar);
         else if(printCarName == 1)
-            return new Mercedes(a);
+            return new Mercedes(randomCar);
         else if(printCarName == 2)
-            return new Seat(a);
+            return new Seat(randomCar);
         else
             return null;
     }
