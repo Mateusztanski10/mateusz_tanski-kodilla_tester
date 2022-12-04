@@ -27,8 +27,9 @@ public class CalculatorTestSuite {
     @Test
     public void testSquareUp() {
         Calculator calculator3 = new Calculator();
-        int e = 8;
-        int squareUpResult = calculator3.squareUp(e);
-        assertEquals(64, squareUpResult, 0.1);
+        double e = 2;
+        double f = 3;
+        double squareUpResult = calculator3.squareUp(e, f);
+        assertEquals(8, squareUpResult, 0.1);
     }
 }

@@ -1,4 +1,5 @@
 package com.kodilla.basic_assertion;
+import java.lang.Math;
 
 public class Calculator {
 
@@ -10,7 +11,7 @@ public class Calculator {
         return a - b;
     }
 
-    public int squareUp(int e) {
-        return e * e;
+    public double squareUp(double e, double f) {
+        return Math.pow(e, f);
     }
 }
