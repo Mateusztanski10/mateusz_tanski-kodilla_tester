@@ -7,9 +7,9 @@ public class Stamp {
     private String stampName;
     private double stampWidth;
     private double stampLength;
-    private String rubberStamp;
+    boolean rubberStamp;
 
-    public Stamp(String stampName, double stampWidth, double stampLength, String rubberStamp) {
+    public Stamp(String stampName, double stampWidth, double stampLength, boolean rubberStamp) {
         this.stampName = stampName;
         this.stampWidth = stampWidth;
         this.stampLength = stampLength;
@@ -28,7 +28,7 @@ public class Stamp {
         return stampLength;
     }
 
-    public String getRubberStamp() {
+    public boolean getRubberStamp() {
         return rubberStamp;
     }
 
