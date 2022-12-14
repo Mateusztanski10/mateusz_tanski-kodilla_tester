@@ -1,35 +1,41 @@
 package com.kodilla.basic_assertion;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CalculatorTestSuite {
+    static int a, b, c, d;
+    static double e, f;
+    static Calculator calculator;
+
+    @BeforeAll
+    public static void setUp() {
+        calculator = new Calculator();
+        a = 5;
+        b = 8;
+        c = 10;
+        d = 5;
+        e = 2;
+        f = 3;
+    }
 
     @Test
     public void testSum() {
-        Calculator calculator = new Calculator();
-        int a = 5;
-        int b = 8;
         int sumResult = calculator.sum(a, b);
         assertEquals(13, sumResult);
     }
 
     @Test
     public void testSubtract() {
-        Calculator calculator2 = new Calculator();
-        int c = 10;
-        int d = 5;
-        int subtractResult = calculator2.subtract(c, d);
+        int subtractResult = calculator.subtract(c, d);
         assertEquals(5, subtractResult);
     }
 
     @Test
     public void testSquareUp() {
-        Calculator calculator3 = new Calculator();
-        double e = 2;
-        double f = 3;
-        double squareUpResult = calculator3.squareUp(e, f);
+        double squareUpResult = calculator.squareUp(e, f);
         assertEquals(8, squareUpResult, 0.1);
     }
 }
