@@ -13,15 +13,17 @@ public class UsersManager {
 
         List<String> moreThan13Letters = userNamesWithMoreThan13Letters(13);
         System.out.println(moreThan13Letters);
+
+        List<String> securityGroupUsernames = filterSecurityGroupUsernames();
+        System.out.println(securityGroupUsernames);
     }
 
     static List<String> filterChemistsGroupUsernames() {
-        List<String> usernames = UsersRepository.getUsersList()
+         return UsersRepository.getUsersList()
                 .stream()
                 .filter(user -> user.getGroup().equals("Chemists"))
                 .map(UsersManager::getUserName)
                 .collect(Collectors.toList());
-        return usernames;
     }
 
     public static String getUserName(User user) {
@@ -29,20 +31,26 @@ public class UsersManager {
     }
 
     static List<String> usersOlderThan(int age) {
-        List<String> allUserNames = UsersRepository.getUsersList()
+        return UsersRepository.getUsersList()
                 .stream()
                 .filter(user1 -> user1.getAge() > age)
                 .map(UsersManager::getUserName)
                 .collect(Collectors.toList());
-        return allUserNames;
     }
 
     static List<String> userNamesWithMoreThan13Letters(int letters) {
-        List<String> userNamesWithMoreThan13Letters = UsersRepository.getUsersList()
+        return UsersRepository.getUsersList()
                 .stream()
                 .filter(user2 -> user2.getUsername().length() > letters)
                 .map(UsersManager::getUserName)
                 .collect(Collectors.toList());
-        return userNamesWithMoreThan13Letters;
+    }
+
+    static List<String> filterSecurityGroupUsernames() {
+        return UsersRepository.getUsersList()
+                .stream()
+                .filter(user3 -> user3.getGroup().equals("Security"))
+                .map(UsersManager::getUserName)
+                .collect(Collectors.toList());
     }
 }
