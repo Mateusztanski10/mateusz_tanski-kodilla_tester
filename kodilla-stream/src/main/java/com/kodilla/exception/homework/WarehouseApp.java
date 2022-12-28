@@ -11,7 +11,5 @@ public class WarehouseApp {
         warehouse.addOrder(new Order("Banana"));
         warehouse.addOrder(new Order("Ham"));
 
-        System.out.println(warehouse.isOrderInUse("Cucumber"));
-
     }
 }

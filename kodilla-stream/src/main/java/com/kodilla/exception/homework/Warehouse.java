@@ -11,17 +11,7 @@ public class Warehouse {
         return orders;
     }
 
-    public Set<Order> getOrder(String number) {
-        getOrder(number)
-                .stream()
-                .filter(n -> n.getNumber().equals(number))
-                .forEach(System.out::println);
-        return getOrder(number);
-        }
-
-    public String isOrderInUse(String number) throws OrderDoesntExistException {
-        if(getOrder(number).equals(number))
-            return getOrder(number).toString();
-        throw new OrderDoesntExistException();
+    public Order getOrder(String number) throws OrderDoesntExistException {
+        return orders.stream().filter(order -> order.getNumber().equals(number)).findFirst().orElseThrow(OrderDoesntExistException::new);
     }
 }
