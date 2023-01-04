@@ -13,8 +13,8 @@ class GamblingMachineTestSuite {
     @Test
     @ParameterizedTest
     @CsvFileSource(resources = "/allNumbersForGamblingMachine.csv")
-    public void shouldEqualsMyNumbersWithComputerNumbers(int input) {
-        assertEquals(input, gamblingMachine.howManyWins());
+    public void shouldEqualsMyNumbersWithComputerNumbers(int input, int expected) {
+        assertEquals(expected, gamblingMachine.howManyWins(input);
     }
 
 }
