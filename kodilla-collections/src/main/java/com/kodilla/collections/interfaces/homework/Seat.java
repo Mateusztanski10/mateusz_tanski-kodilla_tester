@@ -20,6 +20,11 @@ public class Seat implements Car {
         speed = speed + increaseValue;
     }
 
+    public void increaseSpeed(int speed) {
+        speed += speed;
+        System.out.println();
+    }
+
     @Override
     public void decreaseSpeed() {
         speed = speed - decreaseValue;

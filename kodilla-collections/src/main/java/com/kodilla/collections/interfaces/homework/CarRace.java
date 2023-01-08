@@ -14,6 +14,7 @@ public class CarRace {
     }
 
     public static void doRace(Car car) {
+
         car.increaseSpeed();
         car.increaseSpeed();
         car.increaseSpeed();
@@ -22,6 +23,4 @@ public class CarRace {
 
         System.out.println(car.getSpeed());
     }
-
-
 }

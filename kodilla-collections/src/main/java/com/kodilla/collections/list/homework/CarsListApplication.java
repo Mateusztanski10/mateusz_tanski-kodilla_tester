@@ -26,6 +26,7 @@ public class CarsListApplication {
         cars.remove(mercedes);
 
         cars.remove(0);
+        //cars.remove(new Seat(100));
 
         System.out.println(cars.size());
 
