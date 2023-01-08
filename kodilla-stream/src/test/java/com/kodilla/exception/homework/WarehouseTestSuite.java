@@ -12,16 +12,22 @@ class WarehouseTestSuite {
     @BeforeAll
     public static void setUp() {
         warehouse = new Warehouse();
+
+        warehouse.addOrder(new Order("Milk"));
+        warehouse.addOrder(new Order("Soap"));
+        warehouse.addOrder(new Order("Lemon"));
+        warehouse.addOrder(new Order("Banana"));
+        warehouse.addOrder(new Order("Ham"));
     }
 
     @Test
     public void testIsOrderInUse() throws OrderDoesntExistException {
-        String isMilkInUse = warehouse.isOrderInUse("Milk");
-        assertTrue(Boolean.parseBoolean(isMilkInUse));
+        Order isMilkInUse = warehouse.getOrder("Milk");
+        assertTrue(isMilkInUse != null);
     }
 
     @Test
     public void testIsOrderInUse_withException() {
-        assertThrows(OrderDoesntExistException.class, () -> warehouse.isOrderInUse("Cucumber"));
+        assertThrows(OrderDoesntExistException.class, () -> warehouse.getOrder("Cucumber"));
     }
 }

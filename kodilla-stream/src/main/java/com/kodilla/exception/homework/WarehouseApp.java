@@ -10,6 +10,5 @@ public class WarehouseApp {
         warehouse.addOrder(new Order("Lemon"));
         warehouse.addOrder(new Order("Banana"));
         warehouse.addOrder(new Order("Ham"));
-
     }
 }
