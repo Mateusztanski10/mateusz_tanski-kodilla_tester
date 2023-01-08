@@ -23,4 +23,13 @@ public class Order {
     public String getLogin() {
         return login;
     }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "valueOfOrder=" + valueOfOrder +
+                ", date=" + date +
+                ", login='" + login + '\'' +
+                '}';
+    }
 }
