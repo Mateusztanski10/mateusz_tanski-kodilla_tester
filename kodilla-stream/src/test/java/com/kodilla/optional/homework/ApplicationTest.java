@@ -39,8 +39,13 @@ class ApplicationTest {
     }
 
     @Test
-    public void shouldReturnTrue() {
+    public void shouldReturnTrueIfSizeIsTheSame() {
         assertTrue(students.size() == studentNames.size());
+    }
+
+    @Test
+    public void shouldReturnTrueIfNamesAreTheSame() {
+        assertTrue(students.get(1).getStudentName().equals("Marcin") == studentNames.get(1).getStudentName().equals("Marcin"));
     }
 }
 
