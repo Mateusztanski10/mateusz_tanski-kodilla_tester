@@ -31,6 +31,18 @@ public class Shop {
         return orderBetweenMinValueAndMaxValue.size();
     }
 
+    /*
+    public int getOrderBetweenMinValueAndMaxValue(double minValueOfOrder, double maxValueOfOrder) {
+        List<String> orderBetweenMinValueAndMaxValue = new ArrayList<>();
+        for (Order order : orders) {
+            if(order.getValueOfOrder() > minValueOfOrder && order.getValueOfOrder() < maxValueOfOrder) {
+                orderBetweenMinValueAndMaxValue.add(order.getLogin());
+            }
+        }
+        return orderBetweenMinValueAndMaxValue.size();
+    }
+     */
+
     public int getSizeOfOrders () {
          return orders.size();
     }
