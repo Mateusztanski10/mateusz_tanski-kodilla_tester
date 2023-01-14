@@ -7,10 +7,7 @@ import java.util.Scanner;
 @Component
 public class Display {
 
-    public double display(double value){
-            System.out.println("Please, write your value: ");
-            Scanner scanner = new Scanner(System.in);
-            value = scanner.nextDouble();
-            return value;
+    public String display(double value) {
+        return "The value: " + value;
     }
 }

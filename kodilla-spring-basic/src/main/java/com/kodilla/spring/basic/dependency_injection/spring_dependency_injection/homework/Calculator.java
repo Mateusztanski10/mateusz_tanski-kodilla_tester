@@ -1,39 +1,39 @@
 package com.kodilla.spring.basic.dependency_injection.spring_dependency_injection.homework;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Calculator {
 
-    @Autowired
     private Display display;
 
-    @Autowired
-    public void displayMyValue(Display display) {
+    public Calculator(Display display) {
         this.display = display;
     }
 
     public double add (double a, double b) {
-        this.display.display();
-        double result = (a + b);
-        return result;
+        double sum = a + b;
+        this.display.display(sum);
+        return sum;
     }
 
     public double subtract (double a, double b) {
-        this.display.display();
-        double result = (a - b);
-        return result;
+        double subtract = a - b;
+        this.display.display(subtract);
+        return subtract;
     }
 
     public double multiply (double a, double b) {
-        this.display.display();
-        double result = (a * b);
-        return result;
+        double multiply = a * b;
+        this.display.display(multiply);
+        return multiply;
     }
     public double divide (double a, double b) {
-        this.display.display();
-        double result = (a / b);
-        return result;
+        double divide = a / b;
+        if(b == 0) {
+            return 0;
+        }
+        this.display.display(divide);
+        return divide;
     }
 }
