@@ -1,18 +1,33 @@
 package com.kodilla.notification.homework;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 class NotificationSendingTestSuite {
 
-    NotificationSending notificationSending = new NotificationSending();
-    Notification notification = Mockito.mock(Notification.class);
-    Removal removal = Mockito.mock(Removal.class);
-    Person person = Mockito.mock(Person.class);
-    Person secondPerson = Mockito.mock(Person.class);
-    Person thirdPerson = Mockito.mock(Person.class);
-    Localisation localisation = Mockito.mock(Localisation.class);
-    Localisation secondLocalisation = Mockito.mock(Localisation.class);
+    NotificationSending notificationSending;
+    Notification notification;
+    Removal removal;
+    Person person;
+    Person secondPerson;
+    Person thirdPerson;
+    Localisation localisation;
+    Localisation secondLocalisation;
+
+    @BeforeAll
+    public void setUp() {
+        notificationSending = new NotificationSending();
+        notification = Mockito.mock(Notification.class);
+        removal = Mockito.mock(Removal.class);
+        person = Mockito.mock(Person.class);
+        secondPerson = Mockito.mock(Person.class);
+        thirdPerson = Mockito.mock(Person.class);
+        localisation = Mockito.mock(Localisation.class);
+        secondLocalisation = Mockito.mock(Localisation.class);
+    }
+
+
 
     @Test
     public void interestedPersonCanBeAddedToProperLocalisationAndWillStartReceiveNotification() {
@@ -74,7 +89,7 @@ class NotificationSendingTestSuite {
     }
 
     private void addPerson(Person... person1) {
-        for(Person currentPerson : person1) {
+        for (Person currentPerson : person1) {
             notificationSending.addPerson(currentPerson);
         }
     }
