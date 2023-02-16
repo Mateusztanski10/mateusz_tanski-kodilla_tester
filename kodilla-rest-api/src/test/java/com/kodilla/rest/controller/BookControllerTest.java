@@ -12,10 +12,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class BookControllerTest {
 
+    BookService bookServiceMock = Mockito.mock(BookService.class);
+    BookController bookController = new BookController(bookServiceMock);
+
     @Test
     void shouldFetchBooks() {
-        BookService bookServiceMock = Mockito.mock(BookService.class);
-        BookController bookController = new BookController(bookServiceMock);
         List<BookDto> booksList = new ArrayList<>();
         booksList.add(new BookDto("Title 1", "Author 1"));
         booksList.add(new BookDto("Title 2", "Author 2"));
@@ -27,15 +28,13 @@ class BookControllerTest {
     }
 
     @Test
-    void shouldAddBooks() {
-        BookService bookServiceMock = Mockito.mock(BookService.class);
-        BookController bookController = new BookController(bookServiceMock);
+    public void shouldAddBook() {
         bookController.addBook(new BookDto("The Lord Of The Rings", "J.R.R. Tolkien"));
         bookController.addBook(new BookDto("Bastion", "Stephen King"));
         bookController.addBook(new BookDto("It", "Stephen King"));
 
-        List<BookDto> result = bookController.getBooks();
-
-        assertThat(result).hasSize(3);
+        Mockito.verify(bookServiceMock, Mockito.times(1)).addBook(new BookDto("It", "Stephen King"));
+        Mockito.verify(bookServiceMock, Mockito.times(1)).addBook(new BookDto("Bastion", "Stephen King"));
+        Mockito.verify(bookServiceMock, Mockito.times(1)).addBook(new BookDto("The Lord Of The Rings", "J.R.R. Tolkien"));
     }
 }
