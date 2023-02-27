@@ -94,7 +94,6 @@ class DbManagerTestSuite {
 
     @Test
     public void testSelectUsersAndPosts() throws SQLException {
-        //Given
         DbManager dbManager = DbManager.getInstance();
         String countQuery = "SELECT COUNT(*) FROM USERS";
         Statement statement = dbManager.getConnection().createStatement();
@@ -114,12 +113,10 @@ class DbManagerTestSuite {
         sql = "INSERT INTO USERS(FIRSTNAME, LASTNAME) VALUES ('Oli', 'Kosiw')";
         statement.executeUpdate(sql);
 
-        //When
         String sqlQuery = "SELECT * FROM USERS";
         statement = dbManager.getConnection().createStatement();
         rs = statement.executeQuery(sqlQuery);
 
-        //Then
         int counter = 0;
         while (rs.next()) {
             System.out.println(rs.getInt("ID") + ", " +
