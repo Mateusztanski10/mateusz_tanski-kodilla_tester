@@ -14,8 +14,8 @@ public class Car {
         System.out.println("lights were turned on");
     }
 
-    public void openDoors() {
-        System.out.println("Opening 4 doors");
+    public String openDoors() {
+        return ("Opening 4 doors");
     }
 
     public int getWheels() {
