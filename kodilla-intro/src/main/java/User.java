@@ -26,8 +26,9 @@ public class User {
         int result = 0;
         for (int i = 0; i < users.length; i++) {
             result = result + users[i].age;
-            System.out.println(result);
         }
+        System.out.println(result);
+
         double averageAge = 0;
         averageAge = result / users.length;
         System.out.println(averageAge);
